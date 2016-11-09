@@ -87,6 +87,7 @@ foreign key (idFornecedor) references  Fornecedor(idFornecedor)
 );
 
 create table itemCompra(
+idItemCompra int primary key auto_increment,
 idCompra int,
 idProduto int,
 foreign key (idProduto) references  Produto(idProduto),
@@ -95,6 +96,7 @@ quantidade double not null
 );
 
 create table itemVenda(
+idItemVenda int primary key auto_increment,
 idVenda int,
 idProduto int,
 foreign key (idVenda) references  Venda(idVenda),
