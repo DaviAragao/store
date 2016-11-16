@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/11/2016 21:28:21 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="obj.Usuario" table="usuario" catalog="db_sistema" optimistic-lock="version">
+        <id name="idUsuario" type="java.lang.Integer">
+            <column name="idUsuario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="pessoa" class="obj.Pessoa" fetch="select">
+            <column name="idPessoa" />
+        </many-to-one>
+        <property name="login" type="string">
+            <column name="login" length="60" not-null="true" />
+        </property>
+        <property name="senha" type="string">
+            <column name="senha" length="60" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

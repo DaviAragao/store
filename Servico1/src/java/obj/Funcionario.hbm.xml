@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/11/2016 21:28:21 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="obj.Funcionario" table="funcionario" catalog="db_sistema" optimistic-lock="version">
+        <id name="idFuncionario" type="java.lang.Integer">
+            <column name="idFuncionario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="pessoa" class="obj.Pessoa" fetch="select">
+            <column name="idPessoa" />
+        </many-to-one>
+        <property name="nrocarteira" type="string">
+            <column name="nrocarteira" length="20" not-null="true" />
+        </property>
+        <property name="salario" type="double">
+            <column name="salario" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="funcao" type="string">
+            <column name="funcao" length="20" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
