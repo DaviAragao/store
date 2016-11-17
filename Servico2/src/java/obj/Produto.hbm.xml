@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/11/2016 22:17:38 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="obj.Produto" table="Produto" catalog="db_sistema" optimistic-lock="version">
+        <id name="idProduto" type="java.lang.Integer">
+            <column name="idProduto" />
+            <generator class="identity" />
+        </id>
+        <property name="descricao" type="string">
+            <column name="descricao" length="60" not-null="true" />
+        </property>
+        <property name="marca" type="string">
+            <column name="marca" length="60" not-null="true" />
+        </property>
+        <property name="valor" type="string">
+            <column name="valor" length="60" not-null="true" />
+        </property>
+        <property name="unidadeMedida" type="string">
+            <column name="unidadeMedida" length="60" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
